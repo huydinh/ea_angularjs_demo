@@ -1,0 +1,19 @@
+.notes(ng-controller="NotesCtrl")
+  .span4
+    .total
+      Number of notes: {{notes.length}}
+    %ul
+      %li(ng-repeat='note in notes' ng-click='select(note)')
+        .name {{ note.title }}
+
+  .span8
+    .field
+      %label Title
+      %input(ng-model = 'currentNote.title')
+    .field
+      %label Content
+      %input(ng-model = 'currentNote.content')
+
+    .actions
+      %button(ng-click = 'new()')
+        Add new note
